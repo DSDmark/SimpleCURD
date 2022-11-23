@@ -1,2 +1,0 @@
-# TodoLis
-Created with CodeSandbox
