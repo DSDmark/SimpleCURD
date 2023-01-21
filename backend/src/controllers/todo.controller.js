@@ -18,19 +18,63 @@ export const create = async (req, res) => {
 
 export const findOne = async (req, res) => {
   try {
-    const {id} = req.query;
+    const { id } = req.query;
     const data = await db.findById(id);
     if (!data) {
       res.status(404).json({ message: "Not found " + id });
     }
     res.status(200).json(data);
-    console.log(data)
+    console.log(data);
   } catch (err) {
     console.log(err);
   }
 };
-export const findAll = (req, res) => {};
-export const deleteAll = (req, res) => {};
-export const delelteOne = (req, res) => {};
-export const update = (req, res) => {};
+
+export const findAll = async (req, res) => {
+  try {
+    const { title } = req.query;
+    console.log(title)
+      ? { title: { $regex: new RegExp(title), $options: "i" } }
+      : {};
+    let data = await db.find(condition);
+    if (data) {
+      res.json(data);
+    } else {
+      res.status(500).json({ message: "internal server error " });
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+export const deleteAll = async (req, res) => {
+  try {
+    let data = await db.deleteMany({});
+    if (data) {
+      res.json({ message: "all todo is deleted" });
+    } else {
+      res.status(500).json({ message: "internal server error" });
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+export const deleteOne = async(req, res) => {
+  try{
+
+  
+  const {id} = req.query;
+
+  const data = await db.findByIdAndRemove(id);
+    if(data){
+      res.status(200).json({message:"todo deleted"})
+    }else{
+      res.status(500).json({message:"internal server error"})
+    }
+  } catch(err){
+    console.log(err)
+  }
+};
+export const update = (req, res) => {
+
+};
 export const findAllPublished = (req, res) => {};
