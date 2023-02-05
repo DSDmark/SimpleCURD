@@ -58,23 +58,40 @@ export const deleteAll = async (req, res) => {
     console.log(err);
   }
 };
-export const deleteOne = async(req, res) => {
-  try{
+export const deleteOne = async (req, res) => {
+  try {
+    const { id } = req.query;
 
-  
-  const {id} = req.query;
-
-  const data = await db.findByIdAndRemove(id);
-    if(data){
-      res.status(200).json({message:"todo deleted"})
-    }else{
-      res.status(500).json({message:"internal server error"})
+    const data = await db.findByIdAndRemove(id);
+    if (data) {
+      res.status(200).json({ message: "todo deleted" });
+    } else {
+      res.status(500).json({ message: "internal server error" });
     }
-  } catch(err){
-    console.log(err)
+  } catch (err) {
+    console.log(err);
   }
 };
-export const update = (req, res) => {
-
+export const update = async (req, res) => {
+  try {
+    const {title,desc} = req.body
+    if (title || desc) {
+      const data = await db.findByIdAndUpdate(req.query.id, req.body, {
+        useFindAndModify: false,
+      });
+      console.log(req.body)
+      if (data) {
+        res.status(200).json({ message: "data updated" });
+      } else {
+        res
+          .status(400)
+          .json({ message: `Connot update that id:${req.query.id}` });
+      }
+    } else {
+      res.status(400).json({ message: "please fill the data" });
+    }
+  } catch (err) {
+    console.log(err);
+  }
 };
 export const findAllPublished = (req, res) => {};
