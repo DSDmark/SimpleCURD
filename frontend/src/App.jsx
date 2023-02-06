@@ -1,4 +1,3 @@
-import Todo from './pages/todo.jsx'
 import AddTodo from './pages/addtodo.jsx'
 import Todolist from './pages/todolist.jsx'
 import { Button } from '@mui/material'
@@ -12,8 +11,8 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path="/" element={<Todolist />} />
-          <Route path="/todo" element={<Todolist />} />
-          <Route path="/add" element={<AddTodo />} />
+          <Route path="/todolist" element={<Todolist />} />
+          <Route path="/AddTodo" element={<AddTodo />} />
           <Route path="/todo/:id" element={<AddTodo />} />
         </Routes>
       </Router>

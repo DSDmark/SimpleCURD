@@ -45,7 +45,7 @@ const NavBar = () => {
           ) : (
             <Box className={classes.navlinks}>
               {pages.map((e) => (
-                <Link className={classes.link} to={`/${e}`}>
+                <Link key={e} className={classes.link} to={`/${e}`}>
                   {e}
                 </Link>
               ))}
