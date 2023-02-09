@@ -10,31 +10,25 @@ import {
   Typography,
   Link,
 } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import { AccountCircle } from '@mui/icons-material'
-const Todolist = () => {
-  const paperStyle = {
-    padding: 20,
-    height: '70vh',
-    width: 280,
-    margin: '20px auto',
-  }
-  const avatarStyle = { backgroundColor: '#1bbd7e' }
-  const btnstyle = { margin: '8px 0' }
+const Todolist = ({onChangeTitle,onChangeDes,saveTodo}) => {
   return (
-    <Grid>
-      <Paper elevation={10} style={paperStyle}>
-        <Grid align="center">
-          <Avatar style={avatarStyle}>
+<Grid container >
+        <Grid item align="center">
+      
+      <Paper elevation={10} m={4}>
+          <Avatar >
             <AccountCircle />
           </Avatar>
           <h2>Sign In</h2>
-        </Grid>
         <TextField
           label="Username"
           placeholder="Enter username"
           variant="outlined"
           fullWidth
           required
+        onClick={(e)=>onChangeTitle(e)}
         />
         <TextField
           label="Password"
@@ -43,6 +37,8 @@ const Todolist = () => {
           variant="outlined"
           fullWidth
           required
+        onClick={(e)=>onChangeDes(e)}
+        
         />
         <FormControlLabel
           control={<Checkbox name="checkedB" color="primary" />}
@@ -52,7 +48,6 @@ const Todolist = () => {
           type="submit"
           color="primary"
           variant="contained"
-          style={btnstyle}
           fullWidth
         >
           Sign in
@@ -61,10 +56,10 @@ const Todolist = () => {
           <Link href="#">Forgot password ?</Link>
         </Typography>
         <Typography>
-          {' '}
           Do you have an account ?<Link href="#">Sign Up</Link>
         </Typography>
       </Paper>
+        </Grid>
     </Grid>
   )
 }

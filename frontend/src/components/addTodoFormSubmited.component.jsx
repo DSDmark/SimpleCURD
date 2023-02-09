@@ -8,7 +8,7 @@ const AddTodoFormSubmited = ({ newTodo }) => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: '49vh',
+        minHeight: '90vh',
       }}
     >
       <Paper
@@ -16,12 +16,12 @@ const AddTodoFormSubmited = ({ newTodo }) => {
         sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
         elevation={6}
       >
-        <Box p={4}>
+        <Box display="flex" flexDirection="column" alignContent="center" p={4}>
           <Typography variant="h5">You have submitted successfully</Typography>
+          <Button variant="contained" onClick={newTodo}>
+            Add new todo
+          </Button>
         </Box>
-        <Button variant="contained" onClick={newTodo}>
-          Add new todo
-        </Button>
       </Paper>
     </Box>
   )
