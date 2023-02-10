@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, connect } from 'react-redux'
 import { createTodo } from '../slices/todo.js'
 import AddTodoFormSubmited from '../components/addTodoFormSubmited.component.jsx'
+import AddTodoFrom from '../components/addTodoForm.component.jsx'
 //import AddTodoForm from '../components/addTodoForm.component.jsx'
 
 const AddTodo = () => {
@@ -11,7 +12,7 @@ const AddTodo = () => {
     title: '',
     desc: '',
     publiched: false,
-    submitted: true,
+    submitted: false,
   })
 
   const onChangeDes = (e) => {
@@ -19,6 +20,7 @@ const AddTodo = () => {
       ...state,
       desc: e.target.value,
     })
+
   }
 
   const onChangeTitle = (e) => {
@@ -55,7 +57,8 @@ const AddTodo = () => {
     })
   }
 
-  return <>{state.submitted ? <AddTodoFormSubmited newTodo={newTodo} /> : "hey" }</>
+return <>{state.submitted ? <AddTodoFormSubmited newTodo={newTodo} /> : <AddTodoFrom onChangeTitle={onChangeTitle} onChangeDes={onChangeDes} saveTodo={saveTodo}/>}
+</>
 }
 
 export default connect(null, { createTodo })(AddTodo)

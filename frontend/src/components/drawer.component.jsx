@@ -10,19 +10,16 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material'
-import { makeStyles } from '@mui/styles'
+import CloseIcon from '@mui/icons-material/Close';
 import {Link} from "react-router-dom";
-import AirIcon from '@mui/icons-material/Air';
+import OpenWithIcon from '@mui/icons-material/OpenWith';
 
 const DrawerComponent = ({logo,pages}) => {
   const [open, setOpen] = useState(false)
   return <>
     <Drawer open={open} onClose={()=>setOpen(prev=>false)}>
       <Toolbar>
-        <Typography>
-          {logo}
-        </Typography>
-        <AirIcon color="primary" onClick={()=>setOpen(prev=>false)}/>
+        <CloseIcon onClick={()=>setOpen(prev=>false)}/>
       </Toolbar>
       {pages.map(e=>(
       <Box>
@@ -41,7 +38,7 @@ const DrawerComponent = ({logo,pages}) => {
       ))}
     </Drawer>
     <IconButton onClick={()=>setOpen((prev)=>!prev)}>
-     <AirIcon/>
+      <OpenWithIcon/>
     </IconButton>
     </>
 }

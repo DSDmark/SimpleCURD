@@ -8,7 +8,7 @@ import {
   useMediaQuery,
   Box,
 } from '@mui/material'
-import AirIcon from '@mui/icons-material/Air'
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { makeStyles } from '@mui/styles'
 import { Link } from 'react-router-dom'
 import DrawerComponent from './drawer.component.jsx'
@@ -36,7 +36,7 @@ const NavBar = () => {
       <AppBar position="static" component="nav">
         <CssBaseline />
         <Toolbar>
-          <AirIcon />
+          <GitHubIcon />
           <Typography variant="h6" className={classes.logo}>
             {logo}
           </Typography>
