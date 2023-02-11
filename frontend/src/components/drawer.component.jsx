@@ -22,7 +22,7 @@ const DrawerComponent = ({logo,pages}) => {
         <CloseIcon onClick={()=>setOpen(prev=>false)}/>
       </Toolbar>
       {pages.map(e=>(
-      <Box>
+      <Box key={window.crypto.randomUUID()}>
         <List>
           <Divider/>
           <ListItem>
