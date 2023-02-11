@@ -8,36 +8,35 @@ import {
   useMediaQuery,
   Box,
 } from '@mui/material'
-import GitHubIcon from '@mui/icons-material/GitHub';
+import GitHubIcon from '@mui/icons-material/GitHub'
 import { makeStyles } from '@mui/styles'
 import { Link } from 'react-router-dom'
 import DrawerComponent from './drawer.component.jsx'
 
 const useStyles = makeStyles((theme) => ({
-  navlinks: { marginLeft: theme.spacing(10), display: 'flex' },
-  logo: { fontSize: '20px', flexGrow: 1, cursor: 'pointer' },
+  navlinks: { marginLeft: theme.spacing(0), display: 'flex' },
+  logo: {...theme.typography.subtitle1 ,flexGrow: 1, cursor: 'pointer' },
   link: {
     textDecoration: 'none',
     color: 'white',
-    fontSize: '20px',
-    marginLeft: theme.spacing(2),
+    marginLeft: theme.spacing(0),
     '&:hover': { color: 'yellow' },
   },
 }))
 
 const NavBar = () => {
-  const pages = ['todolist', 'addtodo']
+  const pages = ['todo', 'addtodo']
   const classes = useStyles()
   const logo = 'DSDmark'
   const isMoblie = useMediaQuery((theme) => theme.breakpoints.down('md'))
 
   return (
     <>
-      <AppBar position="static" component="nav">
+      <AppBar position="static" color="primary" component="nav">
         <CssBaseline />
         <Toolbar>
           <GitHubIcon />
-          <Typography variant="h6" className={classes.logo}>
+          <Typography variant="subtitle1" className={classes.logo}>
             {logo}
           </Typography>
           {isMoblie ? (

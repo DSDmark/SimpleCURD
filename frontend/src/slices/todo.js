@@ -10,13 +10,21 @@ export const createTodo = createAsyncThunk(
   }
 )
 
+export const retrieveTodo = createAsyncThunk('getData', async () => {
+  const res = await TodoDataService.getAll()
+  return res
+})
+
 export const todoSlices = createSlice({
   name: 'todo',
   initialState,
   extraReducers: (builder) => {
     builder.addCase('create', (state, action) => {
       state.push(action.payload)
-    })
+    }),
+      builder.addCase('getAll', (state, action) => {
+        return [...action.payload]
+      })
   },
 })
 
