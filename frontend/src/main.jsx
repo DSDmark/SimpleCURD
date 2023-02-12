@@ -5,7 +5,7 @@ import { store } from './store'
 import { Provider } from 'react-redux'
 import "./index.css" 
 import {ThemeProvider} from "@mui/styles"
-import {theme} from "./theme"
+import {theme} from "./utils/theme"
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>

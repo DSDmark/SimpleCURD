@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const AddTodoFrom = ({ onChangeTitle, onChangeDes, saveTodo }) => {
+const AddTodoForm = ({ onChangeTitle, onChangeDes, saveTodo }) => {
   const classes = useStyles()
   return (
     <Box className={classes.flexStyle}>
@@ -74,4 +74,4 @@ const AddTodoFrom = ({ onChangeTitle, onChangeDes, saveTodo }) => {
   )
 }
 
-export default AddTodoFrom
+export default AddTodoForm
