@@ -1,15 +1,14 @@
-import AddTodo from './pages/addtodo.jsx'
-import Todo from './pages/todo.jsx'
+import { Todo, AddTodo } from './pages/'
 import { CssBaseline } from '@mui/material'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import NavBar from './components/navbar'
+import { Navbar } from './components/'
 
 const App = () => {
   return (
     <>
       <CssBaseline />
       <Router>
-        <NavBar />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Todo />} />
           <Route path="/todo" element={<Todo />} />
