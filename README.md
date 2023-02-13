@@ -59,7 +59,7 @@ Once you are done you can close 🔒 the application in your terminal to quit th
 
 </div>
 
-### SimpleWeb
+### SimpleCURD
 
 ![SimpleCURD perview](public/images/perview.gif "SimpleCURD")
 
