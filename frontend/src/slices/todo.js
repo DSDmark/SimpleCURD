@@ -12,7 +12,7 @@ export const createTodo = createAsyncThunk(
 
 export const retrieveTodo = createAsyncThunk('getData', async () => {
   const res = await TodoDataService.getAll()
-  return res
+  return res.data
 })
 
 export const todoSlices = createSlice({

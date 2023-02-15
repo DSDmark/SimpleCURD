@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.post("/add",create)
 router.get("/find",findOne)
-router.get("findAll",findAll)
+router.get("/findAll",findAll)
 router.get("/deleteAll",deleteAll)
 router.get("/deleteOne",deleteOne)
 router.post("/update",update)

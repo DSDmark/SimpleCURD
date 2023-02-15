@@ -32,11 +32,7 @@ export const findOne = async (req, res) => {
 
 export const findAll = async (req, res) => {
   try {
-    const { title } = req.query;
-    console.log(title)
-      ? { title: { $regex: new RegExp(title), $options: "i" } }
-      : {};
-    let data = await db.find(condition);
+    let data = await db.find();
     if (data) {
       res.json(data);
     } else {
@@ -46,6 +42,7 @@ export const findAll = async (req, res) => {
     console.log(err);
   }
 };
+
 export const deleteAll = async (req, res) => {
   try {
     let data = await db.deleteMany({});
