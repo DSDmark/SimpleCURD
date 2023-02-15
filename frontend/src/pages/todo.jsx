@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useEffect, useCallback } from 'react'
+import { retrieveTodo } from '../slices/todo.js'
+import { useDispatch, connect, useSelector } from 'react-redux'
 import { Todolist, SearchBar, Sidebar } from '../components/'
 import { Box, Container, Grid } from '@mui/material'
 
 const Todo = () => {
+  const dispatch = useDispatch()
+  const todo = useSelector((state) => state.todo)
+
+  const initData = useCallback(() => {
+    dispatch(retrieveTodo())
+  }, [dispatch])
+
+  useEffect(async () => {
+    initData()
+  }, [initData])
+
   return (
     <>
       <Box sx={{ marginTop: '3rem' }}>
@@ -17,10 +30,14 @@ const Todo = () => {
             >
               <SearchBar />
             </Grid>
-            <Grid Item xs={6}>
+            {todo &&
+              todo.map((e) => {
+                return { e }
+              })}
+            <Grid item xs={6}>
               <Todolist />
             </Grid>
-            <Grid Item xs={6}>
+            <Grid item xs={6}>
               <Sidebar />
             </Grid>
           </Grid>
@@ -29,4 +46,5 @@ const Todo = () => {
     </>
   )
 }
+
 export default Todo

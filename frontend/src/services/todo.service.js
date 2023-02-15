@@ -2,7 +2,7 @@ import http from "../utils/http-common.js"
 
 class TodoDataService{
   getAll(){
-    return http.get("/todo")
+    return http.get("/api/findAll")
   }
   get(id){
     return http.get(`/todo?id=${id}`)
