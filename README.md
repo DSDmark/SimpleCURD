@@ -59,13 +59,14 @@ Once you are done you can close 🔒 the application in your terminal to quit th
 
 </div>
 
-### SimpleWeb
+### SimpleCURD
 
 ![SimpleCURD perview](public/images/perview.gif "SimpleCURD")
 
 > If you have any issues with that Application feel free to let me know 🙃!
 
-> If you are more interested, check out 🥺 the collection of [ **CLIsapplications**](https://github.com/DSDmark"DSDmark").
+> If you are more interested, check out 🥺 the collection of [ **DSDmark
+**](https://github.com/DSDmark"DSDmark").
 
 ---
 
