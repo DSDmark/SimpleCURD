@@ -1,8 +1,7 @@
-import { Todo, AddTodo } from './pages/'
 import { CssBaseline } from '@mui/material'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Navbar } from './components/'
-
+import {Todo, AddTodo} from "./pages"
 const App = () => {
   return (
     <>
@@ -19,5 +18,4 @@ const App = () => {
     </>
   )
 }
-
 export default App

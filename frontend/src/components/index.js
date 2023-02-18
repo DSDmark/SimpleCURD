@@ -1,7 +1,3 @@
-export { default as AddTodoForm } from './addTodoForm.component.jsx'
-export { default as AddTodoFormSubmited } from './addTodoFormSubmited.component.jsx'
-export { default as Drawer } from './drawer.component.jsx'
-export { default as Navbar } from './navbar.jsx'
-export { default as SearchBar } from './search.component.jsx'
-export { default as Todolist} from './todolist.component.jsx'
-export { default as Sidebar} from './sidebar.component.jsx'
+export { AddTodoForm,AddTodoFormSubmited } from "./addTodo/"
+export { Drawer,Navbar } from './navbar/'
+export { Todolist,Sidebar,SearchBar } from './todolist/'

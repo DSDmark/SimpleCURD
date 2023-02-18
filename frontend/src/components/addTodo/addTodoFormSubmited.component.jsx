@@ -12,7 +12,6 @@ const AddTodoFormSubmited = ({ newTodo }) => {
       }}
     >
       <Paper
-        justifyContent="center"
         sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
         elevation={6}
       >
