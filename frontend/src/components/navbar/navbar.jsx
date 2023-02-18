@@ -4,7 +4,6 @@ import {
   Toolbar,
   CssBaseline,
   Typography,
-  useTheme,
   useMediaQuery,
   Box,
 } from '@mui/material'
@@ -14,12 +13,12 @@ import { Link } from 'react-router-dom'
 import DrawerComponent from './drawer.component.jsx'
 
 const useStyles = makeStyles((theme) => ({
-  navlinks: { marginLeft: theme.spacing(0), display: 'flex' },
+  navlinks: { marginLeft: theme.spacing(2), display: 'flex' },
   logo: {...theme.typography.subtitle1 ,flexGrow: 1, cursor: 'pointer' },
   link: {
     textDecoration: 'none',
     color: 'white',
-    marginLeft: theme.spacing(0),
+    marginLeft: theme.spacing(2),
     '&:hover': { color: 'yellow' },
   },
 }))

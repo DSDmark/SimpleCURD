@@ -1,9 +1,9 @@
 import React from 'react'
-import { Checkbox, FormControlLabel, Grid, Paper, Avatar, TextField, Box, Button, Typography, Link } from '@mui/material'
+import { Checkbox, FormControlLabel, Grid, Paper, Avatar, TextField, Box, Button } from '@mui/material'
 import { AccountCircle } from '@mui/icons-material'
 import { styled } from '@mui/material/styles'
 
-const AddForm = styled(Box)(({ theme }) => ({
+const AddForm = styled(Box)(() => ({
   display: 'grid',
   placeItems: 'center',
   minHeight: '90vh',

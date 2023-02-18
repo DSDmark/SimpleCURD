@@ -13,14 +13,5 @@ export const theme = createTheme({
       light: '#ff860c',
       contrastText: '#ffff0c',
     },
-  },
-  spacing: [8, 10, 12],
-  typography: {
-    htmlFontSize: 10,
-    subtitle1: {
-      fontSize:20,
-      fontWeight: 400,
-      color:"white"
-    },
-  },
+  }
 })

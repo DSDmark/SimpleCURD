@@ -30,13 +30,13 @@ const AddTodo = () => {
   const saveTodo = async (e) => {
     try {
       const { title, desc } = state
-      let data = await dispatch(createTodo({ title, desc }))
+      let data = dispatch(createTodo({ title, desc }))
       setState({
         id: data.id,
         title: data.title,
         desc: data.desc,
         publish: data.publiched,
-        submitted: false,
+        submitted: true,
       })
       console.log(data)
     } catch (err) {

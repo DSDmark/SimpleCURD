@@ -1,29 +1,7 @@
 # See https:*//help.ithub.com/articles/inorin-files/ for more about inorin files.
 
 # vim files
-*/*.swp
-*/*.swo
-*/*.swn
-*/*.bak
-*/*.un~
-*/*.viminfo
-*/*.netrwhist
-*/*.svl
-*/*.svm
-*/*.svn
-*/*.svo
-*/*.svp
-*/*.svq
-*/*.svr
-*/*.svs
-*/*.svt
-*/*.svu
-*/*.svv
-*/*.svw
-*/*.svx
-*/*.svy
-*/*.svz
-
+*/*.[s~]*
 
 # dependencies
 */node_modules
