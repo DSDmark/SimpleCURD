@@ -1,7 +1,8 @@
 # See https:*//help.ithub.com/articles/inorin-files/ for more about inorin files.
 
 # vim files
-.*.sw[a-z]
+*~
+.*.s[a-z]/
 
 # dependencies
 node_modules/
