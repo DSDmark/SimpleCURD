@@ -1,25 +1,26 @@
 # See https:*//help.ithub.com/articles/inorin-files/ for more about inorin files.
 
 # vim files
-*/*.[s~]*
+.*.sw[a-z]
 
 # dependencies
-./node_modules
-*/node_modules
-*/.pnp
+node_modules/
+
+# package lock 
+package-lock.json
+.pnp
 .pnp.js
 pnpm-lock.yaml
-*/pnpm-lock.yaml
 
 # testin
-*/covergae
+covergae
 
 # production
-*/build
+build
 
 # misc
 .DS_Store
-*/.env
+.env
 .env.local
 .env.development.local
 .env.test.local
