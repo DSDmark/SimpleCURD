@@ -15,7 +15,7 @@ const AddTodoForm = ({ onChangeTitle, onChangeDes, saveTodo }) => {
       <Paper elevation={10} m={4}>
         <Grid container>
           <Grid item p={4} lineHeight={3} align="center">
-            <Avatar sx={{ bgcolor: 'green' }}>
+            <Avatar sx={{ bgcolor: 'primary.main' }}>
               <AccountCircle />
             </Avatar>
             <h2>Add Todo</h2>

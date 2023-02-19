@@ -1,17 +1,15 @@
-import { createTheme } from '@mui/material'
 
-export const theme = createTheme({
-   // Define CSS variables
+import { createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
   palette: {
     primary: {
-      main:"#fff",
-      darker: '#0cffff',
-      contrastText: '#0cff0c',
+      main:"#000",
+      dark:"#000",
+      light:"#fff",
     },
-    secondary: {
-      main: '#ff0c86',
-      light: '#ff860c',
-      contrastText: '#ffff0c',
-    },
-  }
-})
+  },
+});
+
+
+export default theme

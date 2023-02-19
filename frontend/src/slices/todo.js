@@ -3,8 +3,8 @@ import TodoDataService from '../services/todo.service.js'
 
 const initialState = { todos: [], currentTodo: {} }
 
-export const createTodo = createAsyncThunk('createData', async ({ title, desc }) => {
-  const res = await TodoDataService.create({ title, desc })
+export const createTodo = createAsyncThunk('createData', async ({ title, desc,published }) => {
+  const res = await TodoDataService.create({ title, desc, published })
   return res.data;
 })
 
