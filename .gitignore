@@ -4,9 +4,12 @@
 */*.[s~]*
 
 # dependencies
+node_modules
 */node_modules
 */.pnp
 .pnp.js
+pnpm-lock.yaml
+*/pnpm-lock.yaml
 
 # testin
 */covergae
