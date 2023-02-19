@@ -1,12 +1,10 @@
 import React from 'react'
 import { Todolist, SearchBar, Sidebar } from '../components/'
 import { Box, Container, Grid } from '@mui/material'
-import {TodoData} from "../context/"
 
 const Todo = () => {
   return (
     <>
-      <TodoData>
         <Box sx={{ marginTop: '3rem' }}>
           <Container>
             <Grid container alignItems="stretch" spacing={2}>
@@ -22,7 +20,6 @@ const Todo = () => {
             </Grid>
           </Container>
         </Box>
-      </TodoData>
       </>
   )
 }
