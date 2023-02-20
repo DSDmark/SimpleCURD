@@ -1,0 +1,26 @@
+{
+  "name": "simplecurd",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "index.js",
+  "scripts": {
+    "start:backend":"cd ./backend && npm start",
+    "start:frontend":"cd ./frontend && pnpm run dev",
+    "start":"concurrently \"pnpm run start:backend\" \"pnpm run start:frontend\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DSDmark/SimpleCURD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DSDmark/SimpleCURD/issues"
+  },
+  "homepage": "https://github.com/DSDmark/SimpleCURD#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

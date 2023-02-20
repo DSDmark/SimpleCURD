@@ -9,7 +9,7 @@ const AddTodo = () => {
     id: null,
     title: '',
     desc: '',
-    publiched: false,
+    published: false,
     submitted: false,
   })
 
@@ -29,13 +29,13 @@ const AddTodo = () => {
 
   const saveTodo = async (e) => {
     try {
-      const { title, desc } = state
-      let data = dispatch(createTodo({ title, desc }))
+      const { title, desc,published } = state
+      let data = dispatch(createTodo({ title, desc,published }))
       setState({
         id: data.id,
         title: data.title,
         desc: data.desc,
-        publish: data.publiched,
+        published: data.published,
         submitted: true,
       })
       console.log(data)
@@ -49,7 +49,7 @@ const AddTodo = () => {
       id: null,
       title: '',
       desc: '',
-      publiched: false,
+      published: false,
       submitted: false,
     })
   }

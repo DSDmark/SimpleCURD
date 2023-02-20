@@ -1,4 +1,4 @@
-import http from "../utils/http-common.js"
+import {http} from "../utils/"
 
 class TodoDataService{
   getAll(){
