@@ -13,24 +13,19 @@ const AddTodo = () => {
     submitted: false,
   })
 
-  const onChangeDes = (e) => {
+  const hendleInputs = (e) => {
+    let name = e.target.name === "Checkbox" ? "published" : e.target.name;
+    let value = e.target.name === "Checkbox" ? e.target.checked : e.target.value;
     setState({
       ...state,
-      desc: e.target.value,
-    })
-  }
-
-  const onChangeTitle = (e) => {
-    setState({
-      ...state,
-      title: e.target.value,
+      [name]: value
     })
   }
 
   const saveTodo = async (e) => {
     try {
-      const { title, desc,published } = state
-      let data = dispatch(createTodo({ title, desc,published }))
+      const { title, desc, published } = state
+      let data = dispatch(createTodo({ title, desc, published }))
       setState({
         id: data.id,
         title: data.title,
@@ -60,8 +55,7 @@ const AddTodo = () => {
         <AddTodoFormSubmited newTodo={newTodo} />
       ) : (
         <AddTodoForm
-          onChangeTitle={onChangeTitle}
-          onChangeDes={onChangeDes}
+          hendleInputs={hendleInputs}
           saveTodo={saveTodo}
         />
       )}

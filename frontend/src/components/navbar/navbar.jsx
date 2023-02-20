@@ -35,7 +35,7 @@ const NavBar = () => {
     <>
       <AppBar position="static" color="primary" component="nav">
         <Toolbar>
-          <Box>
+          <Box sx={{"&:hover":{color:"primary.dark"}}}>
             <Grid container>
               <Grid item xs={3} p={1}>
                 <GitHubIcon  fontSize="large"/>
@@ -48,7 +48,9 @@ const NavBar = () => {
             </Grid>
             </Box>
           {isMoblie ? (
-            <DrawerComponent logo={logo} pages={pages} />
+            <Box ml="auto">
+            <DrawerComponent pages={pages} />
+            </Box>
           ) : (
               <Box ml="auto">
                 <Grid container columnSpacing={1}>
@@ -60,10 +62,8 @@ const NavBar = () => {
                         </Links>
                       </PagesLinks>
                     </Grid>
-
                   ))}
                 </Grid>
-
               </Box>
             )}
         </Toolbar>
