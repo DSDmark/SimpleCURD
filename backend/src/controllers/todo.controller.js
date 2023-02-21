@@ -32,9 +32,12 @@ export const findOne = async (req, res) => {
 
 export const findAll = async (req, res) => {
   try {
-    let data = await db.find();
+    const { title } = req.query;
+    let condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
+    let data = await db.find(condition);
     if (data) {
       res.json(data);
+      console.log(data)
     } else {
       res.status(500).json({ message: "internal server error " });
     }
@@ -71,7 +74,7 @@ export const deleteOne = async (req, res) => {
 };
 export const update = async (req, res) => {
   try {
-    const {title,desc} = req.body
+    const { title, desc } = req.body
     if (title || desc) {
       const data = await db.findByIdAndUpdate(req.query.id, req.body, {
         useFindAndModify: false,
@@ -91,4 +94,4 @@ export const update = async (req, res) => {
     console.log(err);
   }
 };
-export const findAllPublished = (req, res) => {};
+export const findAllPublished = (req, res) => { };
