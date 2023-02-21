@@ -8,39 +8,39 @@ import {
   IconButton,
   Divider,
   Toolbar,
-  Typography,
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import OpenWithIcon from '@mui/icons-material/OpenWith';
 
-const DrawerComponent = ({logo,pages}) => {
+const DrawerComponent = ({ pages }) => {
   const [open, setOpen] = useState(false)
   return <>
-    <Drawer open={open} onClose={()=>setOpen(prev=>false)}>
+    <Drawer open={open} onClose={() => setOpen(prev => !prev)}>
       <Toolbar>
-        <CloseIcon onClick={()=>setOpen(prev=>false)}/>
+        <IconButton onClick={() => setOpen((prev) => !prev)}>
+          <CloseIcon />
+        </IconButton>
       </Toolbar>
-      {pages.map(e=>(
-      <Box key={window.crypto.randomUUID()}>
-        <List>
-          <Divider/>
-          <ListItem>
-            <ListItemText>
-              <Link to={`/${e}`}>
-                {e}
-              </Link>
-            </ListItemText>
+      {pages.map(e => (
+        <Box key={window.crypto.randomUUID()}>
+          <List>
+            <Divider />
+            <ListItem>
+              <ListItemText>
+                <Link to={`/${e}`}>
+                  {e}
+                </Link>
+              </ListItemText>
             </ListItem>
-        </List>
-      </Box>
-      
+          </List>
+        </Box>
       ))}
     </Drawer>
-    <IconButton onClick={()=>setOpen((prev)=>!prev)}>
-      <OpenWithIcon/>
+    <IconButton sx={{ bgcolor: "primary.light", ":hover": { bgcolor: "primary.dark" } }} onClick={() => setOpen((prev) => !prev)}>
+      <OpenWithIcon />
     </IconButton>
-    </>
+  </>
 }
 
 export default DrawerComponent

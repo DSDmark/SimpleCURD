@@ -1,22 +1,22 @@
-import {http} from "../utils/"
+import { http } from "../utils/"
 
-class TodoDataService{
-  getAll(){
+class TodoDataService {
+  getAll() {
     return http.get("/api/findAll")
   }
-  get(id){
+  get(id) {
     return http.get(`/todo?id=${id}`)
   }
-  create(data){
-    return http.post("/api/add",data)
+  create(data) {
+    return http.post("/api/add", data)
   }
-  update(id){
+  update(id) {
     return http.delete(`/todo?id=${id}`)
   }
-  deleteAll(){
-    return http.delete("/todo")
+  deleteAll() {
+    return http.delete("/api/deleteAll")
   }
-  findByTitle(title){
+  findByTitle(title) {
     return http.get(`/todo?title=${title}`)
   }
 }

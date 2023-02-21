@@ -3,14 +3,22 @@ import TodoDataService from '../services/todo.service.js'
 
 const initialState = { todos: [], currentTodo: {} }
 
-export const createTodo = createAsyncThunk('createData', async ({ title, desc,published }) => {
+// create todo
+export const createTodo = createAsyncThunk('createData', async ({ title, desc, published }) => {
   const res = await TodoDataService.create({ title, desc, published })
   return res.data;
 })
 
+// get all todo
 export const retrieveTodo = createAsyncThunk('getData', async () => {
   const res = await TodoDataService.getAll()
   return res.data
+})
+
+// delete all todo
+export const deleteAllTodo = createAsyncThunk("deleteAllData", async () => {
+  const res = await TodoDataService.deleteAll();
+  return res.data;
 })
 
 export const todoSlices = createSlice({
@@ -25,10 +33,11 @@ export const todoSlices = createSlice({
     builder.addCase('create', (state, action) => {
       state.push(action.payload)
     }),
+      builder.addCase(deleteAllTodo.fulfilled, (state, action) => {
+        return initialState;
+      }),
       builder.addMatcher(
-        (action) => action.type === retrieveTodo.fulfilled.type,
-        (state, action) => { return { ...state, todos: action.payload } }
-      )
+        (action) => action.type === retrieveTodo.fulfilled.type, (state, action) => { return { ...state, todos: action.payload } })
   },
 })
 
