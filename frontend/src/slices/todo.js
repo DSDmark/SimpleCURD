@@ -21,13 +21,19 @@ export const deleteAllTodo = createAsyncThunk("deleteAllData", async () => {
   return res.data;
 })
 
+// finding by title 
+export const findByTitle = createAsyncThunk("findByTitle", async ({ title }) => {
+  const res = await TodoDataService.findByTitle(title)
+  return res.data;
+})
+
 export const todoSlices = createSlice({
   name: 'todo',
   initialState,
   reducers: {
     setCurrentTodo: (state, action) => {
       state.currentTodo = { ...action.payload }
-    }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase('create', (state, action) => {
@@ -36,11 +42,15 @@ export const todoSlices = createSlice({
       builder.addCase(deleteAllTodo.fulfilled, (state, action) => {
         return initialState;
       }),
+      builder.addCase(findByTitle.fulfilled, (state, action) => {
+        return { ...state, todos: action.payload }
+      }),
+
       builder.addMatcher(
         (action) => action.type === retrieveTodo.fulfilled.type, (state, action) => { return { ...state, todos: action.payload } })
   },
 })
 
-export const { setCurrentTodo } = todoSlices.actions;
+export const { setCurrentTodo, setFilteredTodo } = todoSlices.actions;
 export const todoReducer = todoSlices.reducer;
 
