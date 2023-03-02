@@ -1,13 +1,24 @@
 import mongoose from "mongoose"
+import dotenv from "dotenv"
 
-const URL = "mongodb+srv://dsmark1:4QDLmzsdJZQnCulW@cluster0.b0nodoi.mongodb.net/curdtest?retryWrites=true&w=majority"
-  
+dotenv.config();
+
+// const URI = process.env.MONGO_URI
+const URI = process.env.MONGO_URI
+
 mongoose.set('strictQuery', false);
 
-mongoose.connect(URL, {
-  useNewUrlParser:true,
-  useUnifiedTopology:true
- },(err)=>{
- if(err)throw err;
+if (!URI) {
+  console.error('MONGO_URI is undefined');
+  process.exit(1);
+}
+
+mongoose.connect(URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}, (err) => {
+  if (err) throw err;
   console.log("mongodb connected.")
 });
+
+

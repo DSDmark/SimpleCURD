@@ -27,6 +27,13 @@ export const findByTitle = createAsyncThunk("findByTitle", async ({ title }) => 
   return res.data;
 })
 
+// delete one by id 
+export const deleteById = createAsyncThunk("deleteById", async (id) => {
+  console.log(id)
+  const res = await TodoDataService.deleteOne(id);
+  return res.data;
+})
+
 export const todoSlices = createSlice({
   name: 'todo',
   initialState,
@@ -36,8 +43,8 @@ export const todoSlices = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase('create', (state, action) => {
-      state.push(action.payload)
+    builder.addCase(createTodo.fulfilled, (state, action) => {
+      state.todos.push(action.payload)
     }),
       builder.addCase(deleteAllTodo.fulfilled, (state, action) => {
         return initialState;

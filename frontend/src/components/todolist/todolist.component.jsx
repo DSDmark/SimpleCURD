@@ -46,7 +46,7 @@ const Todolist = () => {
           </Grid>
           {todo.todos && todo.todos.map((e) => (
             <Grid key={e.id} item xs={12}>
-              <Item elevation={4} sx={selectedTodo && selectedTodo.id == e.id ? { bgcolor: "primary.dark", color: "white" } : ""} onClick={() => setTodo(e)}>{e.title}</Item>
+              <Item elevation={4} sx={selectedTodo.id == e.id ? { bgcolor: "primary.dark", color: "white" } : ""} onClick={() => setTodo(e)}>{e.title}</Item>
             </Grid>
           ))}
         </Grid>

@@ -72,6 +72,7 @@ export const deleteOne = async (req, res) => {
     console.log(err);
   }
 };
+
 export const update = async (req, res) => {
   try {
     const { title, desc } = req.body
@@ -79,6 +80,7 @@ export const update = async (req, res) => {
       const data = await db.findByIdAndUpdate(req.query.id, req.body, {
         useFindAndModify: false,
       });
+
       console.log(req.body)
       if (data) {
         res.status(200).json({ message: "data updated" });
@@ -94,4 +96,5 @@ export const update = async (req, res) => {
     console.log(err);
   }
 };
+
 export const findAllPublished = (req, res) => { };

@@ -6,6 +6,6 @@ router.post("/add", create)
 router.get("/find", findOne)
 router.get("/findAll", findAll)
 router.delete("/deleteAll", deleteAll)
-router.get("/deleteOne", deleteOne)
+router.delete("/deleteOne", deleteOne)
 router.post("/update", update)
 export default router;
