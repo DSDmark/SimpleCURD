@@ -16,6 +16,9 @@ class TodoDataService {
   deleteAll() {
     return http.delete("/api/deleteAll")
   }
+  deleteOne(id) {
+    return http.delete(`/api/deleteOne?id=${id}`)
+  }
   findByTitle(title) {
     return http.get(`/api/findAll?title=${title}`)
   }

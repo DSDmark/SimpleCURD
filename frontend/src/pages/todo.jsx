@@ -1,5 +1,5 @@
 import React from 'react'
-import { Todolist, SearchBar, Sidebar, DeleteTodo } from '../components/'
+import { Todolist, SearchBar, Sidebar, DeleteTodo, UpdateTodo } from '../components/'
 import { Box, Container, Grid } from '@mui/material'
 
 const Todo = () => {
@@ -13,7 +13,10 @@ const Todo = () => {
             </Grid>
             <Grid item xs={12} md={6}>
               <Todolist />
-              <DeleteTodo />
+              <Grid container columnGap={2} justifyContent="center" direction="row">
+                <DeleteTodo />
+                <UpdateTodo />
+              </Grid>
             </Grid>
             <Grid item xs={12} md={6}>
               <Sidebar />

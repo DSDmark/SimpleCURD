@@ -1,7 +1,7 @@
 import { CssBaseline } from '@mui/material'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Navbar } from './components/'
-import {Todo, AddTodo} from "./pages"
+import { Todo, AddTodo, UpdateTodo } from "./pages"
 const App = () => {
   return (
     <>
@@ -12,7 +12,7 @@ const App = () => {
           <Route path="/" element={<Todo />} />
           <Route path="/todo" element={<Todo />} />
           <Route path="/AddTodo" element={<AddTodo />} />
-          <Route path="/todo/:id" element={<AddTodo />} />
+          <Route path="/todo/:id" element={<UpdateTodo />} />
         </Routes>
       </Router>
     </>

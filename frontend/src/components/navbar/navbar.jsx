@@ -14,16 +14,16 @@ import { Link } from 'react-router-dom'
 import DrawerComponent from './drawer.component.jsx'
 
 
-const PagesLinks = styled(Paper)(({theme})=>({
-  marginLeft:theme.spacing(2),
-  ":hover":{background:theme.palette.primary.dark,"&>a":{color:theme.palette.primary.light}},
-  padding:theme.spacing(1),
+const PagesLinks = styled(Paper)(({ theme }) => ({
+  marginLeft: theme.spacing(2),
+  ":hover": { background: theme.palette.primary.dark, "&>a": { color: theme.palette.primary.light } },
+  padding: theme.spacing(1),
 }))
 
-const Links = styled(Link)(({theme})=>({
+const Links = styled(Link)(({ theme }) => ({
   ...theme.typography.button,
-  textDecoration:"none",
-  fontWeight:"bold",
+  textDecoration: "none",
+  fontWeight: "bold",
 }))
 
 const NavBar = () => {
@@ -35,40 +35,40 @@ const NavBar = () => {
     <>
       <AppBar position="static" color="primary" component="nav">
         <Toolbar>
-          <Box sx={{"&:hover":{color:"primary.dark"}}}>
-            <Grid container>
+          <Box sx={{ "&:hover": { color: "primary.dark" }, color: "primary.light", textDecoration: "none" }} component={Link} to="/">
+            <Grid container >
               <Grid item xs={3} p={1}>
-                <GitHubIcon  fontSize="large"/>
+                <GitHubIcon fontSize="large" />
               </Grid>
-              <Grid item xs={9}> 
-                <Typography variant="h6" p={1}> 
+              <Grid item xs={9}>
+                <Typography variant="h6" p={1}>
                   {logo}
                 </Typography>
               </Grid>
             </Grid>
-            </Box>
+          </Box>
           {isMoblie ? (
             <Box ml="auto">
-            <DrawerComponent pages={pages} />
+              <DrawerComponent pages={pages} />
             </Box>
           ) : (
-              <Box ml="auto">
-                <Grid container columnSpacing={1}>
-                  {pages.map((e) => (
-                    <Grid item key={e}>
-                      <PagesLinks elevation={4}>
-                        <Links to={`/${e}`} >
-                          {e}
-                        </Links>
-                      </PagesLinks>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Box>
-            )}
+            <Box ml="auto">
+              <Grid container columnSpacing={1}>
+                {pages.map((e) => (
+                  <Grid item key={e}>
+                    <PagesLinks elevation={4}>
+                      <Links to={`/${e}`} >
+                        {e}
+                      </Links>
+                    </PagesLinks>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+          )}
         </Toolbar>
       </AppBar>
-      </>
+    </>
   )
 }
 

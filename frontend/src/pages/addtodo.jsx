@@ -14,8 +14,8 @@ const AddTodo = () => {
   })
 
   const hendleInputs = (e) => {
-    let name = e.target.name === "Checkbox" ? "published" : e.target.name;
-    let value = e.target.name === "Checkbox" ? e.target.checked : e.target.value;
+    let name = e.target.name;
+    let value = e.target.name === "published" ? e.target.checked : e.target.value;
     setState({
       ...state,
       [name]: value
