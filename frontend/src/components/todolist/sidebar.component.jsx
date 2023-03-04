@@ -41,7 +41,7 @@ const Sidebar = () => {
         <Grid container rowSpacing={2}>
           <Grid item xs={12} key={window.crypto.randomUUID()}>
             <Item sx={{ bgcolor: "primary.dark" }} elevation={4}>
-              <Typography color="primary" variant="h5">Detailed data of selected todo</Typography>
+              <Typography color="primary.light" variant="h5">Detailed data of selected todo</Typography>
             </Item>
           </Grid>
           {loopData}

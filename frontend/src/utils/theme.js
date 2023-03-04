@@ -6,7 +6,6 @@ const theme = createTheme({
       styleOverrides: {
         body: {
           textTransform: "capitalize",
-          background: "red",
         }
       }
     }

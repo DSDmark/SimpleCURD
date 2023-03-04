@@ -7,5 +7,6 @@ router.get("/find", findOne)
 router.get("/findAll", findAll)
 router.delete("/deleteAll", deleteAll)
 router.delete("/deleteOne", deleteOne)
-router.post("/update", update)
+router.patch("/update", update)
+
 export default router;

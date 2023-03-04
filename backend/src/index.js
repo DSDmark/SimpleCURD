@@ -5,7 +5,6 @@ import bodyParser from "body-parser"
 import router from "./routes/todo.routes.js"
 
 dotenv.config();
-
 const app = express();
 
 var corsOptions = {
@@ -24,3 +23,4 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`server are listens port no.${PORT}`)
 })
+

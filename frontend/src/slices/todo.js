@@ -34,6 +34,12 @@ export const deleteById = createAsyncThunk("deleteById", async (id) => {
   return res.data;
 })
 
+// update by id 
+export const updateById = createAsyncThunk("updateById", async ({ id, title, desc, published }) => {
+  const res = await TodoDataService.updateOne(id, { title, desc, published });
+  return res.data;
+})
+
 export const todoSlices = createSlice({
   name: 'todo',
   initialState,
@@ -52,9 +58,15 @@ export const todoSlices = createSlice({
       builder.addCase(findByTitle.fulfilled, (state, action) => {
         return { ...state, todos: action.payload }
       }),
-
       builder.addMatcher(
-        (action) => action.type === retrieveTodo.fulfilled.type, (state, action) => { return { ...state, todos: action.payload } })
+        (action) => action.type === deleteById.fulfilled.type, (state, action) => { return { ...state, currentTodo: action.payload } })
+    builder.addMatcher(
+      (action) => action.type === updateById.fulfilled.type, (state, action) => { return { ...state, currentTodo: action.payload } })
+    builder.addMatcher(
+      (action) => action.type === updateById.fulfilled.type, (state, action) => { return { ...state, currentTodo: action.payload } })
+
+    builder.addMatcher(
+      (action) => action.type === retrieveTodo.fulfilled.type, (state, action) => { return { ...state, todos: action.payload } })
   },
 })
 

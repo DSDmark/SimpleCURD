@@ -10,8 +10,8 @@ class TodoDataService {
   create(data) {
     return http.post("/api/add", data)
   }
-  update(id) {
-    return http.delete(`/todo?id=${id}`)
+  updateOne(id, data) {
+    return http.patch(`/api/update?id=${id}`, data)
   }
   deleteAll() {
     return http.delete("/api/deleteAll")

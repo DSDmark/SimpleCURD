@@ -4,7 +4,7 @@ import { AccountCircle } from '@mui/icons-material'
 import { useParams, useNavigate } from "react-router-dom"
 import { styled } from '@mui/material/styles'
 import { useSelector, useDispatch } from "react-redux"
-import { deleteById } from "../slices/todo.js"
+import { deleteById, updateById } from "../slices/todo.js"
 import { useState } from 'react'
 
 const AddForm = styled(Box)(() => ({
@@ -25,8 +25,7 @@ const UpdateTodo = () => {
 
   const hendleInputs = (e) => {
     let name = e.target.name;
-    let value = e.target.value
-    console.log(name,selectedTodo)
+    let value = e.target.name === "published" ? e.target.checked : e.target.value;
     setInput({
       ...input,
       [name]: value
@@ -36,6 +35,11 @@ const UpdateTodo = () => {
   const deleteTodo = (e) => {
     dispatch(deleteById(id))
     negivateTo('/todo');
+  }
+
+  const updateData = (e) => {
+    dispatch(updateById({ id, title, desc, published }))
+    negivateTo("/todo");
   }
 
   return (
@@ -51,7 +55,7 @@ const UpdateTodo = () => {
             <TextField name="desc" label="Description" value={desc} sx={{ mt: 2 }} placeholder="Description of your Todo" multiline rows={4} variant="outlined" fullWidth onChange={(e) => hendleInputs(e)} required />
             <FormControlLabel control={<Checkbox name="published" checked={published} onChange={(e) => hendleInputs(e)} textalign="start" />} label="Publish" />
             <ButtonGroup fullWidth={true} variant="contained" >
-              <Button onClick={(e) => saveTodo(e)} >
+              <Button onClick={(e) => updateData(e)} >
                 Update Todo
               </Button>
               <Button onClick={(e) => deleteTodo(e)} >

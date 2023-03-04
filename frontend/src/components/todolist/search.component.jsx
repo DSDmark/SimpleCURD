@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux"
 import { findByTitle } from "../../slices/todo"
 import { useCallback } from 'react'
 
-const Seacrh = styled(Input)(({ theme }) => ({
+const Seacrh = styled(Input)(() => ({
   width: '100%',
 }))
 
