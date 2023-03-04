@@ -13,14 +13,14 @@ const todoSchema = new mongoose.Schema(
       maxLength: [500, "text is out of range in desc"],
     },
     published: {
-      type:Boolean,
-      default:false,
-      required:[true,"add you status"],
+      type: Boolean,
+      default: false,
+      required: [true, "add you status"],
     },
   },
   { timestamps: true }
 );
-todoSchema.method("toJSON", function () {
+todoSchema.method("toJSON", function() {
   const { __v, _id, ...object } = this.toObject();
   object.id = _id;
   return object;
