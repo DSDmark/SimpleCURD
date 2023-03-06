@@ -4,7 +4,8 @@ import dotenv from "dotenv"
 dotenv.config();
 
 // const URI = process.env.MONGO_URI
-const URI = process.env.MONGO_URI
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME } = process.env;
+const URI = `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?authSource=admin`
 
 mongoose.set('strictQuery', false);
 
