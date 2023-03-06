@@ -39,7 +39,7 @@ services:
       - backend
     build:
       context: ./frontend
-      args:
+    environment:
         - CLIENT_APIS_URI=$CLIENT_APIS_URI
     ports:
         - $REACT_DOCKER_PORT:$REACT_LOCAL_PORT   

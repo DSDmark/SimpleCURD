@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-ARG CLIENT_APIS_URI
+ENV CLIENT_APIS_URI=$CLIENT_APIS_URI
 
 RUN npm run build 
 
