@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "node ./dist/index.html",
     "build": "vite build",
     "preview": "vite preview"
   },
