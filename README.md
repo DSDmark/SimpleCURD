@@ -22,10 +22,17 @@
 
 ### How to install 😒
 
+You can utilise that software in two different ways.
+
+- Using **Nodejs**. 
+- Using **Docker**. 
+
+Frist, here is by using **Nodejs**.
+
 1. Click on green **Clone or download** button and choose Download ZIP.
 2. Find the downloaded zipped file on your pc and extract it.
 3. Then install `nodejs` and `NPM` in your local system
-4. Open Root Directory and install all dependences by that commend `npm install`,
+4. Open Root Directory by `cd SimpleCURD` and install all dependences by that commend `npm install` or `pnpm install` in both directory `frontend` and `backend`.
 5. Run commend.
 > ```npm run start```
 
