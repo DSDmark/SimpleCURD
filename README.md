@@ -8,7 +8,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/SimpleCURD)
 [![pages-build-deployment](https://github.com/DSDmark/TodoList/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/DSDmark/TodoList/actions/workflows/pages/pages-build-deployment)
 
-##  React App example with JavaScript and Material-ui 🚀
+##  MERN App example with Reactjs, Material-ui 🚀 for styling and Nodejs
 
 <div align="left">
 
