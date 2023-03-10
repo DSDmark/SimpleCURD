@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.7'
 
 services:
   mongodb:
@@ -19,6 +19,7 @@ services:
     depends_on:
       - mongodb
     build: ./backend
+    image: simplecurd_backend
     restart: unless-stopped
     env_file: ./.env
     ports:
@@ -39,10 +40,11 @@ services:
       - backend
     build:
       context: ./frontend
-    environment:
-        - CLIENT_APIS_URI=$CLIENT_APIS_URI
+      args:
+        - VITE_APIS_URI=$CLIENT_API_BASE_URL
+    image: simplecurd_frontend
     ports:
-        - $REACT_DOCKER_PORT:$REACT_LOCAL_PORT   
+      - $VITE_DOCKER_PORT:$VITE_LOCAL_PORT
     networks:
       - frontend
 
