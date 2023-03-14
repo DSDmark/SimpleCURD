@@ -27,14 +27,22 @@ You can utilise that software in two different ways.
 - Using **Nodejs**. 
 - Using **Docker**. 
 
-Frist, here is by using **Nodejs**.
+#### Frist, here is by using **Nodejs**.
 
 1. Click on green **Clone or download** button and choose Download ZIP.
-2. Find the downloaded zipped file on your pc and extract it.
-3. Then install `nodejs` and `NPM` in your local system
-4. Open Root Directory by `cd SimpleCURD` and install all dependences by that commend `npm install` or `pnpm install` in both directory `frontend` and `backend`.
-5. Run commend.
-> ```npm run start```
+2. Find the downloaded zipped file on your pc and **extract it**.
+3. Then install `nodejs` and `NPM` in your local system.
+4. Open the Root Directory, navigate to SimpleCURD using the command `cd SimpleCURD` and use either `npm install` or `pnpm install` to install all dependencies in the frontend and backend directories.
+It used `"concurrently":"7.6.0"` in this project. So, you may use the `npm start` command in root folder, once you have finished installing all dependencies in each folder that contains a `package.json` file. 
+
+#### Second, here is by using **Docker**.
+
+1. Click on green **Clone or download** button and choose Download ZIP.
+2. Find the downloaded zipped file on your pc and **extract it**.
+3. Then install `Docker` in your local system.
+4. Run that command simply.
+`docker-compose up -d`.
+5. You can now open the **frontend** at `localhost:3000` and the **backend** at `localhost:4000` in your browser.
 
 Once you are done you can close 🔒 the application in your terminal to quit the application.
 
