@@ -7,8 +7,8 @@ import router from "./routes/todo.routes.js"
 dotenv.config();
 const app = express();
 
-const PORT = process.env.NODE_LOCAL_PORT;
-const ORIGIN = process.env.CLIENT_ORIGIN;
+const PORT = process.env.NODE_LOCAL_PORT || 4000;
+const ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:3000";
 
 var corsOptions = {
   origin: ORIGIN
