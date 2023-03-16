@@ -8,13 +8,13 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/SimpleCURD)
 [![pages-build-deployment](https://github.com/DSDmark/TodoList/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/DSDmark/TodoList/actions/workflows/pages/pages-build-deployment)
 
-##  MERN App example with Vitejs, Material-ui 🚀 for styling and Nodejs.
+##  MERN App example with Vitejs, Redux toolkit, Material-ui 🚀 and Nodejs.
 
 <div align="left">
 
 ## Purpose 😑
 
-> The **MERN** app serves as an example of how to utilise Build Vitejs App with Includes [**@mui/Material**](mui.com/) and its peer dependencies, which include emotion, the built-in style engine in **MUI v5**. Moreover, it employed `Node.js` for its **RESTful APIs**, and `MongoDB` was used to store data. It works with the `Docker` platform.
+> The **MERN** app serves as an example of how to utilise Build Vitejs App with Includes [**@mui/Material**](mui.com/) and **Redux toolkit** its peer dependencies, which include emotion, the built-in style engine in **MUI v5**. Moreover, it employed `Node.js` for its **RESTful APIs**, and `MongoDB` was used to store data. It works with the `Docker` platform.
 
 </div>
 
@@ -54,15 +54,19 @@ Once you are done you can close 🔒 the application in your terminal to quit th
 
 ### Here you can quick start with that repo 👼
 
-<!-- #default-branch-switch -->
-
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/create-vite-app)
-
-<!-- #default-branch-switch -->
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui/material-ui/tree/master/examples/create-vite-app)
-
 </div>
+<!-- #default-branch-switch -->
+
+##### For frontend:
+
+[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/DSDmark/SimpleCURD/tree/main/frontend)
+
+<!-- #default-branch-switch -->
+
+##### For backend:
+
+[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/DSDmark/SimpleCURD/tree/main/backend)
+
 
 <div align="left">
 
@@ -72,13 +76,15 @@ Once you are done you can close 🔒 the application in your terminal to quit th
 
 </div>
 
+
 ### SimpleCURD
 
-![SimpleCURD perview](public/images/perview.gif "SimpleCURD")
+![SimpleCURD perview](./assets/perview.gif "SimpleCURD")
 
 > If you have any issues with that Application feel free to let me know 🙃!
 
 > If you are more interested, check out 🥺 the collection of [ **DSDmark**](https://github.com/DSDmark"DSDmark").
+
 
 ---
 
