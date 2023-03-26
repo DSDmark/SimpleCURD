@@ -8,6 +8,22 @@ const theme = createTheme({
           textTransform: "capitalize",
         }
       }
+    },
+    MuiGrid: {
+      styleOverrides: {
+        root: {
+          justifyContent: "center",
+          alignItems: "center",
+        }
+      }
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: "#fff",
+          textDecoration: "none",
+        }
+      }
     }
   },
   palette: {
