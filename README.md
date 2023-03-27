@@ -33,7 +33,7 @@ You can utilise that software in two different ways.
 2. Find the downloaded zipped file on your pc and **extract it**.
 3. Then install `nodejs` and `NPM` in your local system.
 4. Open the Root Directory, navigate to SimpleCURD using the command `cd SimpleCURD` and use either `npm install` or `pnpm install` to install all dependencies in the frontend and backend directories.
-It used `"concurrently":"7.6.0"` in this project. So, you may use the `npm start` command in root folder, once you have finished installing all dependencies in each folder that contains a `package.json` file. 
+It used `concurrently:7.6.0` in this project. So, you may use the `npm start` command in root folder, once you have finished installing all dependencies in each folder that contains a `package.json` file. 
 
 #### Second, here is by using **Docker**.
 
