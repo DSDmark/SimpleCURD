@@ -19,7 +19,7 @@ services:
     depends_on:
       - mongodb
     build: ./backend
-    image: simplecurd_backend
+    image: dsmark/simplecurd_backend
     restart: unless-stopped
     env_file: ./.env
     ports:
@@ -42,7 +42,7 @@ services:
       context: ./frontend
       args:
         - VITE_APIS_URI=$CLIENT_API_BASE_URL
-    image: simplecurd_frontend
+    image: dsmark/simplecurd_frontend
     ports:
       - $VITE_DOCKER_PORT:$VITE_LOCAL_PORT
     networks:
