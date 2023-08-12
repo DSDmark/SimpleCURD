@@ -6,6 +6,8 @@ COPY package.json .
 
 RUN npm install 
 
+RUN rm -rf node_modules
+
 COPY . . 
 
 ENV CLIENT_ORIGIN=$CLIENT_ORIGIN
