@@ -4,7 +4,9 @@ WORKDIR /frontend
 
 COPY package.json .
 
-RUN npm install 
+RUN npm install
+
+RUN npm ci 
 
 COPY . .
 
@@ -18,6 +20,18 @@ FROM nginx:1.17.0-alpine
 
 COPY --from=build-stage /frontend/dist /usr/share/nginx/html
 
-EXPOSE $VITE_DOCKER_PORT 
+# Copy your custom nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
-CMD nginx -g "daemon off;"
+# Copy the entry point script
+COPY entrypoint.sh /entrypoint.sh
+
+# Make the entry point script executable
+RUN chmod +x /entrypoint.sh
+
+EXPOSE $VITE_DOCKER_PORT
+
+# Set the entry point
+ENTRYPOINT ["/entrypoint.sh"]
+
+

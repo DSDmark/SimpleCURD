@@ -45,6 +45,9 @@ services:
     image: dsmark/simplecurd_frontend
     ports:
       - $VITE_DOCKER_PORT:$VITE_LOCAL_PORT
+    environment:
+      - VITE_DOCKER_PORT=${VITE_DOCKER_PORT}
+      - VITE_LOCAL_PORT=${VITE_LOCAL_PORT}
     networks:
       - frontend
 
@@ -54,4 +57,3 @@ volumes:
 networks:
   frontend:
   backend:
-
